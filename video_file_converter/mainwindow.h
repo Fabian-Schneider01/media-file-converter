@@ -18,11 +18,13 @@ public:
 
 private slots:
     void convertButtonClicked();
+    void openFolderClicked();
     void handleComboBoxChange(int index);
 
 private:
     Ui::MainWindow *ui;
     FFmpegHandler ffmpegHandler;
+    QString inputFilePath;
 };
 
 #endif // MAINWINDOW_H

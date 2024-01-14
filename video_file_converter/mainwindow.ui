@@ -50,7 +50,7 @@
      <string>file path</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="openFolder">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -105,14 +105,14 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QRadioButton" name="radioButton">
+         <widget class="QRadioButton" name="MPFourRadioButton">
           <property name="text">
            <string>MP4</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_3">
+         <widget class="QRadioButton" name="AVIRadioButton">
           <property name="text">
            <string>AVI</string>
           </property>
@@ -123,14 +123,14 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
-         <widget class="QRadioButton" name="radioButton_16">
+         <widget class="QRadioButton" name="MOVRadioButton">
           <property name="text">
            <string>MOV</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_17">
+         <widget class="QRadioButton" name="MKVRadioButton">
           <property name="text">
            <string>MKV</string>
           </property>
@@ -141,14 +141,14 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
-         <widget class="QRadioButton" name="radioButton_18">
+         <widget class="QRadioButton" name="WebMRadioButton">
           <property name="text">
            <string>WebM</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_19">
+         <widget class="QRadioButton" name="FLVRadioButton">
           <property name="text">
            <string>FLV</string>
           </property>
@@ -159,14 +159,14 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QRadioButton" name="radioButton_13">
+         <widget class="QRadioButton" name="WMVRadioButton">
           <property name="text">
            <string>WMV</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_14">
+         <widget class="QRadioButton" name="ThreeGPRadioButton">
           <property name="text">
            <string>3GP</string>
           </property>
