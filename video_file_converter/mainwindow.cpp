@@ -7,6 +7,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Connect the convert button's clicked signal to the custom slot
     connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::convertButtonClicked);
+    connect(ui->comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleComboBoxChange(int)));
+    ui->videoWidget->show();
+    ui->audioWidget->hide();
 }
 
 MainWindow::~MainWindow() {
@@ -28,5 +31,15 @@ void MainWindow::convertButtonClicked() {
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
+    }
+}
+
+void MainWindow::handleComboBoxChange(int index) {
+    if(index == 0) {
+        ui->videoWidget->show();
+        ui->audioWidget->hide();
+    } else {
+        ui->videoWidget->hide();
+        ui->audioWidget->show();
     }
 }

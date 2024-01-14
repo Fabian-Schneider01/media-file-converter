@@ -18,10 +18,11 @@ public:
 
 private slots:
     void convertButtonClicked();
+    void handleComboBoxChange(int index);
 
 private:
     Ui::MainWindow *ui;
-    FFmpegHandler ffmpegHandler;  // Instance of FFmpegHandler
+    FFmpegHandler ffmpegHandler;
 };
 
 #endif // MAINWINDOW_H
