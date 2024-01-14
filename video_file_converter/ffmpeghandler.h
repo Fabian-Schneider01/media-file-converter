@@ -3,7 +3,6 @@
 
 #include <QString>
 #include <QDebug>
-#include <iostream>
 
 class FFmpegHandler
 {
@@ -20,7 +19,14 @@ public:
     };
 
     enum AudioFormat {
-
+        MPThree,
+        AAC,
+        WAV,
+        OGG,
+        FLAC,
+        WMA,
+        AIFF,
+        AMR,
     };
 
     FFmpegHandler();

@@ -20,7 +20,6 @@ MainWindow::~MainWindow() {
 void MainWindow::convertButtonClicked() {
     QString inputFilePath = ui->lineEdit->text();
 
-    //video formats
     if (ui->MPFourRadioButton->isChecked()) {
         if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::MPFour)) {
             QMessageBox::information(this, "Conversion Success", "File converted to MP4 successfully!");
@@ -71,52 +70,51 @@ void MainWindow::convertButtonClicked() {
         }
     }
 
-    //audio formats
-    if (ui->MPFourRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::MPThree)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to MP4 successfully!");
+    if (ui->MPThreeRadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::MPThree)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to MP3 successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
-    } else if (ui->AVIRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::AVI)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to AVI successfully!");
+    } else if (ui->AACRadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::AAC)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to AAC successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
-    } else if (ui->MOVRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::MOV)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to MOV successfully!");
+    } else if (ui->WAVRadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::WAV)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to WAV successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
-    } else if (ui->MKVRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::MKV)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to MKV successfully!");
+    } else if (ui->OGGRadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::OGG)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to OGG successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
-    } else if (ui->WebMRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::WebM)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to WebM successfully!");
+    } else if (ui->FLACRadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::FLAC)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to FLAC successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
-    } else if (ui->FLVRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::FLV)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to FLV successfully!");
+    } else if (ui->WMARadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::WMA)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to WMA successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
-    } else if (ui->WMVRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::WMV)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to WMV successfully!");
+    } else if (ui->AIFFRadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::AIFF)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to AIFF successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
-    } else if (ui->ThreeGPRadioButton->isChecked()) {
-        if (ffmpegHandler.convertToVideoFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::VideoFormat::ThreeGP)) {
-            QMessageBox::information(this, "Conversion Success", "File converted to 3GP successfully!");
+    } else if (ui->AMRRadioButton->isChecked()) {
+        if (ffmpegHandler.convertToAudioFormat(inputFilePath, ffmpegHandler.getInputFile(inputFilePath), FFmpegHandler::AudioFormat::AMR)) {
+            QMessageBox::information(this, "Conversion Success", "File converted to AMR successfully!");
         } else {
             QMessageBox::warning(this, "Conversion Error", "Failed to convert file.");
         }
