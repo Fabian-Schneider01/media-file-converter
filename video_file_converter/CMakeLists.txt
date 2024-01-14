@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(video_file_converter VERSION 0.1 LANGUAGES CXX)
+project(media_file_converter VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -20,38 +20,38 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(video_file_converter
+    qt_add_executable(media_file_converter
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         ffmpeghandler.h ffmpeghandler.cpp
     )
 # Define target properties for Android with Qt 6 as:
-#    set_property(TARGET video_file_converter APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#    set_property(TARGET media_file_converter APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-        add_library(video_file_converter SHARED
+        add_library(media_file_converter SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(video_file_converter
+        add_executable(media_file_converter
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(video_file_converter PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(media_file_converter PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.video_file_converter)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.media_file_converter)
 endif()
-set_target_properties(video_file_converter PROPERTIES
+set_target_properties(media_file_converter PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -60,12 +60,12 @@ set_target_properties(video_file_converter PROPERTIES
 )
 
 include(GNUInstallDirs)
-install(TARGETS video_file_converter
+install(TARGETS media_file_converter
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(video_file_converter)
+    qt_finalize_executable(media_file_converter)
 endif()
